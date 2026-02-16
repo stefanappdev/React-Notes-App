@@ -1,18 +1,16 @@
 import "../styles/TailwindStyles.css"
 import '../styles/App.css'
-import Footer  from "./components/Footer.tsx"
-import Navbar from "./components/Navbar.tsx"
 
+import AppRoutes from "./routes/AppRoutes.tsx"
 function App() {
  
 
   return (
-    <>
-      <div id='App' className="bg-blue-200">
-        <Navbar/>
-        <Footer/>
+    <div id='App-bg' >
+      <div id='App' >
+        <AppRoutes/>
        </div>
-    </>
+    </div>
   )
 }
 

@@ -12,7 +12,8 @@ function Navbar() {
   }
 
   const activemobileNavStyle={
-    color:'white', 
+    borderRadius:"2px" ,
+    backgroundColor:'white',
     margin:'1rem auto',
     fontWeight:'bold',
     
@@ -22,7 +23,7 @@ function Navbar() {
 
     
 
-      <nav id='mobile-nav' className="flex  bg-rose-600 align-center items-center">
+      <nav className={`flex ${NavbarStyles['mobile-nav']} bg-red-500 align-center items-center `} >
 
         <NavLink style={({isActive})=>isActive?activemobileNavStyle:regmobileNavStyle}  to='/'>
             <img className={`  ${NavbarStyles['mobile-navImage']}`} src="../../images/icon-home.png"/>

@@ -8,7 +8,7 @@ function Navbar() {
   const regmobileNavStyle={
        margin:'1rem auto',
        color:'rgba(236, 233, 228, 1)',
-      textAlign:'center',
+      textAlign: 'center',
   }
 
   const activemobileNavStyle={
@@ -28,7 +28,7 @@ function Navbar() {
 
         <NavLink style={({isActive})=>isActive?activemobileNavStyle:regmobileNavStyle}  to='/'>
             <img className={`  ${NavbarStyles['mobile-navImage']}`} src="../../images/icon-home.png"/>
-            <span>Home</span>
+            <span>All notes</span>
         </NavLink> 
           
             

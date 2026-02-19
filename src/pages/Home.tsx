@@ -17,7 +17,7 @@ function Home() {
       <div className={`flex flex-col shadow-lg border-collapse border-1 border-slate-400  rounded-sm  items-center justify-center  ${homeStyles['noItems-Window']}`}>
         <h2 className='font-semibold text-lg text-red-400 '>No notes found</h2>
         <br/>
-        <img className='h-20 w-15 ' src='../../images/icon-plus.png'/>
+        <img className='h-20 w-15 ' alt='create a new note' src='../../images/icon-plus.png'/>
 
          <br/>
         <Link to='/create'>

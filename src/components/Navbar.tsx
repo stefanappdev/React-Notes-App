@@ -27,20 +27,20 @@ function Navbar() {
       <nav className={`flex ${NavbarStyles['mobile-nav']} bg-red-500 align-center items-center `} >
 
         <NavLink style={({isActive})=>isActive?activemobileNavStyle:regmobileNavStyle}  to='/'>
-            <img className={`  ${NavbarStyles['mobile-navImage']}`} src="../../images/icon-home.png"/>
+            <img alt='view all notes' className={`  ${NavbarStyles['mobile-navImage']}`} src="../../images/icon-home.png"/>
             <span>All notes</span>
         </NavLink> 
           
             
             <NavLink style={({isActive})=>isActive?activemobileNavStyle:regmobileNavStyle} to='/create'>
-              <img className={`  ${NavbarStyles['mobile-navImage']}`} src="../../images/icon-plus.png"/>
+              <img alt='create a new note' className={`  ${NavbarStyles['mobile-navImage']}`} src="../../images/icon-plus.png"/>
               <span> create a note</span>
             </NavLink>
            
           
           
           <NavLink style={({isActive})=>isActive?activemobileNavStyle:regmobileNavStyle} to='/settings'>
-             <img className={`   ${NavbarStyles['mobile-navImage']}`} src="../../images/icon-settings.png"/>
+             <img alt='settings' className={`   ${NavbarStyles['mobile-navImage']}`} src="../../images/icon-settings.png"/>
               
             <span> settings</span>
           </NavLink>

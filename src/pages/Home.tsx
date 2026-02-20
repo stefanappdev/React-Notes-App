@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import '../../styles/TailwindStyles.css'
 import homeStyles from '../../styles/pageStyles/home.module.css'
-
+import { UseTheme } from '../contexts/themeContext.tsx'
 function Home() {
 
   /* finished empty notes layout, but have to devlop notes object 
   before home page can be entirely completed*/
 
+  const {isDark}=UseTheme()
 
   return (
     <div className="maincontent">
@@ -14,8 +15,24 @@ function Home() {
       <h1 className='text-xl font-bold'>Your notes</h1>
       <br/>
 
-      <div className={`flex flex-col shadow-lg border-collapse border-1 border-slate-400  rounded-sm  items-center justify-center  ${homeStyles['noItems-Window']}`}>
-        <h2 className='font-semibold text-lg text-red-400 '>No notes found</h2>
+      <div className={
+        !isDark?`flex 
+        flex-col 
+        shadow-lg border-collapse border-1 border-slate-400  
+        rounded-sm  
+        items-center 
+        justify-center  
+        ${homeStyles['noItems-Window']}`:
+        `flex 
+        flex-col 
+        shadow-lg border-collapse border-1 border-slate-400  
+        rounded-sm  text-slate-50 bg-slate-950
+        items-center 
+        justify-center  
+        ${homeStyles['noItems-Window']}`
+        
+        }>
+        <h2 className='font-semibold text-lg text-red-500 '>No notes found</h2>
         <br/>
         <img className='h-20 w-15 ' alt='create a new note' src='../../images/icon-plus.png'/>
 

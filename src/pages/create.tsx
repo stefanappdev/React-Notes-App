@@ -1,13 +1,19 @@
 import '../../styles/TailwindStyles.css'
 import createPageStyles from '../../styles/pageStyles/create.module.css'
+import { UseTheme } from '../contexts/themeContext.tsx'
 
 function Create() {
+
+  const {isDark}=UseTheme()
   return (
-    <div className="maincontent">
+    <div className={!isDark?"maincontent":"maincontent bg-slate-950 text-slate-50"}>
      
      <h1 className={`font-bold text-xl ${createPageStyles['page-header']} text-center `}>Create a new note</h1> 
 
-     <form className={`flex flex-col shadow-lg border-collapse ${createPageStyles['createForm']} border-1 border-slate-400  rounded-sm  items-center justify-center ` }>
+     <form className={
+      `flex flex-col shadow-lg border-collapse 
+      ${createPageStyles['createForm']} 
+      border-1 border-slate-400  bg-slate-100 text-slate-950 rounded-sm  items-center justify-center ` }>
 
         <label className='font-semibold text-center' htmlFor="note-title">Subject</label>
 

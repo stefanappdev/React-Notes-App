@@ -1,17 +1,20 @@
 import { NavLink } from "react-router-dom"
 import NavbarStyles from  '../../styles/componentStyles/Navbar.module.css'
 import "../../styles/TailwindStyles.css"
+import { UseTheme } from '../contexts/themeContext.tsx';
+
 
 function Navbar() {
+  
+  const {isDark}=UseTheme();
 
-
-  const regmobileNavStyle={
+  const regmobileNavStyle:React.CSSProperties={
        margin:'1rem auto',
        color:'rgba(236, 233, 228, 1)',
       textAlign: 'center',
   }
 
-  const activemobileNavStyle={
+  const activemobileNavStyle:React.CSSProperties={
     borderRadius:"2px" ,
     backgroundColor:'white',
     margin:'1rem auto',
@@ -24,7 +27,7 @@ function Navbar() {
 
     
 
-      <nav className={`flex ${NavbarStyles['mobile-nav']} bg-red-500 align-center items-center `} >
+      <nav className={`flex ${NavbarStyles['mobile-nav']} bg-red-500 text-slate-50 align-center items-center `}>
 
         <NavLink style={({isActive})=>isActive?activemobileNavStyle:regmobileNavStyle}  to='/'>
             <img alt='view all notes' className={`  ${NavbarStyles['mobile-navImage']}`} src="../../images/icon-home.png"/>

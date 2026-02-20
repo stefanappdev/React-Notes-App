@@ -3,10 +3,12 @@ import Home from '../pages/Home.tsx'
 import Settings from "../pages/Settings.tsx"
 import Create from "../pages/create.tsx"
 import Mainlayout from "../pages/Mainlayout.tsx"
+import { ThemeContextProvider } from "../contexts/themeContext.tsx"
 
 function AppRoutes() {
   return (
     <div>
+      <ThemeContextProvider>
        <Router>
 
       
@@ -20,6 +22,7 @@ function AppRoutes() {
 
         </Routes>
     </Router>
+    </ThemeContextProvider>
     </div>
   )
 }

@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom"
 import NavbarStyles from  '../../styles/componentStyles/Navbar.module.css'
 import "../../styles/TailwindStyles.css"
-import { UseTheme } from '../contexts/themeContext.tsx';
+
+type themeProp={
+  isDark?:boolean,
+}
 
 
-function Navbar() {
-  
-  const {isDark}=UseTheme();
+function Navbar({isDark}:themeProp) {
+
 
   const regmobileNavStyle:React.CSSProperties={
        margin:'1rem auto',
@@ -23,11 +25,16 @@ function Navbar() {
     textAlign:'center',
   }
 
+3  
+
   return (
 
-    
+    <>
 
-      <nav className={`flex ${NavbarStyles['mobile-nav']} bg-red-500 text-slate-50 align-center items-center `}>
+     
+
+      {isDark?<nav className={
+        `flex ${NavbarStyles['mobile-nav']} bg-slate-950 text-slate-50 align-center items-center `}>
 
         <NavLink style={({isActive})=>isActive?activemobileNavStyle:regmobileNavStyle}  to='/'>
             <img alt='view all notes' className={`  ${NavbarStyles['mobile-navImage']}`} src="../../images/icon-home.png"/>
@@ -42,13 +49,37 @@ function Navbar() {
            
           
           
-          <NavLink style={({isActive})=>isActive?activemobileNavStyle:regmobileNavStyle} to='/settings'>
-             <img alt='settings' className={`   ${NavbarStyles['mobile-navImage']}`} src="../../images/icon-settings.png"/>
-              
-            <span> settings</span>
-          </NavLink>
+            <NavLink style={({isActive})=>isActive?activemobileNavStyle:regmobileNavStyle} to='/settings'>
+              <img alt='settings' className={`  ${NavbarStyles['mobile-navImage']}`} src="../../images/icon-settings.png"/>
+              <span> settings</span>
+            </NavLink>
+
+      </nav>:
+       <nav className={
+        `flex ${NavbarStyles['mobile-nav']} bg-red-500 text-slate-50 align-center items-center `}>
+
+        <NavLink style={({isActive})=>isActive?activemobileNavStyle:regmobileNavStyle}  to='/'>
+            <img alt='view all notes' className={`  ${NavbarStyles['mobile-navImage']}`} src="../../images/icon-home.png"/>
+            <span>All notes</span>
+        </NavLink> 
           
+            
+            <NavLink style={({isActive})=>isActive?activemobileNavStyle:regmobileNavStyle} to='/create'>
+              <img alt='create a new note' className={`  ${NavbarStyles['mobile-navImage']}`} src="../../images/icon-plus.png"/>
+              <span> create a note</span>
+            </NavLink>
+           
+          
+          
+            <NavLink style={({isActive})=>isActive?activemobileNavStyle:regmobileNavStyle} to='/settings'>
+              <img alt='settings' className={`  ${NavbarStyles['mobile-navImage']}`} src="../../images/icon-settings.png"/>
+              <span> settings</span>
+            </NavLink>
+
       </nav>
+      }
+
+  </>
   
   )
 }

@@ -26,9 +26,9 @@ function Home() {
         `flex 
         flex-col 
         shadow-lg border-collapse border-1 border-slate-400  
-        rounded-sm  text-slate-50 bg-slate-950
+        rounded-sm  
         items-center 
-        justify-center  
+        justify-center  text-slate-50 bg-slate-950
         ${homeStyles['noItems-Window']}`
         
         }>

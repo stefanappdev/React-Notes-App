@@ -6,7 +6,7 @@ function Create() {
 
   const {isDark}=UseTheme()
   return (
-    <div className={!isDark?"maincontent":"maincontent bg-slate-950 text-slate-50"}>
+    <div className={!isDark?`maincontent`:`maincontent text-slate-50 bg-slate-950`}>
      
      <h1 className={`font-bold text-xl ${createPageStyles['page-header']} text-center `}>Create a new note</h1> 
 

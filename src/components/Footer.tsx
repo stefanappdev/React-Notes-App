@@ -9,7 +9,7 @@ function Footer() {
 <>
     <footer className={
      ` flex flex-row justify-center 
-      font-bold align-center bg-red-500 text-slate-50 
+      font-bold align-center bg-blue-800  text-slate-50 
       ${FooterStyles['footer']}` 
       }>
 

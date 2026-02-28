@@ -2,9 +2,9 @@ import '../../styles/TailwindStyles.css'
 import createPageStyles from '../../styles/pageStyles/create.module.css'
 import { UseTheme } from '../contexts/themeContext.tsx'
 import { useState,useRef} from 'react'
-import useNotesManager from '../components/NotesManager.tsx'
 import type { Note } from '../types/Notes.tsx'
 import { v4 as uuidv4 } from 'uuid';
+ 
 
 
 
@@ -12,7 +12,7 @@ import { v4 as uuidv4 } from 'uuid';
 function Create() {
 
 const id=uuidv4();
-const NotesManager=useNotesManager() 
+
 
 
 
@@ -43,9 +43,14 @@ const subjectRef=useRef('');
         newNote.id=id;
           newNote.body=bodyRef.current;
           newNote.subject=subjectRef.current
-          NotesManager.addNewNote(newNote)
           alert("New Note created!")
-        
+          localStorage.setItem(newNote.id,JSON.stringify(
+            {
+            id:newNote.id,
+            body:newNote.body,
+            subject:newNote.subject,
+
+          }))
         }
     
     const clear=()=>{

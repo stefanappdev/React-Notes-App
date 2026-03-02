@@ -20,7 +20,7 @@ function AppRoutes() {
               <Route path='/settings' element={<Settings/>} />
             </Route>  
 
-            <Route path='/notes/:id' element={<Note/>} />
+            <Route path='/notes/:noteId' element={<Note/>} />
 
         </Routes>
     </Router>

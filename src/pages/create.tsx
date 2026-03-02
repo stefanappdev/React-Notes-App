@@ -2,6 +2,7 @@ import '../../styles/TailwindStyles.css'
 import createPageStyles from '../../styles/pageStyles/create.module.css'
 import { UseTheme } from '../contexts/themeContext.tsx'
 import { useState,useRef} from 'react'
+import { useNavigate } from 'react-router-dom'
 import type { Note } from '../types/Notes.tsx'
 import { v4 as uuidv4 } from 'uuid';
  
@@ -12,7 +13,7 @@ import { v4 as uuidv4 } from 'uuid';
 function Create() {
 
 const id=uuidv4();
-
+const navigate=useNavigate()
 
 
 
@@ -60,11 +61,8 @@ const subjectRef=useRef('');
         subjectRef.current=''
             }
 
-  
-
-    console.log(newNote)
     clear()
-    
+    navigate('/')
   }
 
   const handleSubjectChange=(event:any)=>{

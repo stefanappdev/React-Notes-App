@@ -67,10 +67,17 @@ function Home() {
             return(<div key={item.id}>
               <span><strong>Subject:</strong>{item.subject}</span>
               <br/>
-              <Link to={`/notes/${item.id} `}>
-                 view more
-              </Link>
-              <img alt='delete' onClick={()=>deleteNote(item.id)}/>
+
+              <div className='inline-flex'>
+                <Link to={`/notes/${item.id} `}>
+                  <button className='h-8 w-20 text-slate-100 bg-blue-500 rounded-sm'>view more</button>
+                </Link>
+
+                <button className='h-8 w-20 text-slate-100 bg-red-500 rounded-sm'onClick={()=>deleteNote(item.id)}>
+                  delete
+                </button>
+              </div>
+           
             </div>)
           })
         }

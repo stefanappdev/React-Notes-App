@@ -48,14 +48,54 @@ function Note() {
 
   return (
     <>
-      {!shouldEdit?<div>
+      {!shouldEdit?
+      
+      <div className={ `
+        shadow-lg
+        border-collapse 
+        border-1 border-slate-400  
+        bg-slate-100 
+        text-slate-950 
+        flex flex-col
+        items-center justify-center
+        text-center
+        rounded-sm  
+         ${EditPageStyles['EditForm']} 
+         ` }>
 
-          <h1>{`Title:${noteData.subject}`}</h1>
 
-          <div>{`Body:${noteData.body}`}</div>
-          
-          <button onClick={()=>navigate('/')}>go back</button>
-          <button onClick={handleEditMode}>edit</button>
+          <h1 className={`font-bold text-xl ${EditPageStyles['page-header']}`}>Note Details</h1>
+          <label className="font-semibold" htmlFor="note_subject">Subject</label>
+          <p id='note_subject'>{`${noteData.subject}`}</p>
+          <br/>
+           <label className="font-semibold " htmlFor="note_body">Note Body</label>
+          <div id='note_subject'>{`${noteData.body}`}</div>
+          <br/>
+           <div className={`inline-flex `}>
+            
+
+              <button  onClick={handleEditMode} 
+              className={`${EditPageStyles['formButton']} 
+              
+              text-slate-100 
+              rounded-sm 
+              font-bold 
+              bg-blue-500 
+              w-25 
+              h-10`}>
+               Edit note
+              </button>
+
+
+
+                <button onClick={()=>navigate('/')}
+              className={`${EditPageStyles['formButton']} 
+              text-slate-100 rounded-sm
+               font-bold bg-red-500 
+               w-25 h-10`}>
+                close
+              </button>
+            </div>  
       </div>:
       <>
       <h1 className={`font-bold text-xl ${EditPageStyles['page-header']} text-center `}>Edit your note</h1>

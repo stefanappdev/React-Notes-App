@@ -54,7 +54,7 @@ const turnOn=()=>{
   return (
     <div className='maincontent'>
       
-      <h1 className={`text-xl font-bold`}>Settings</h1>
+      <h1 className={` ${settingsStyles['settings-header']} text-center text-xl font-bold`}>Settings</h1>
       <br/>
       
       <div className={ 

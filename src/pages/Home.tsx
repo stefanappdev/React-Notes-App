@@ -30,7 +30,7 @@ function Home() {
 
    return <div className='maincontent'>
      
-     <h1>Your notes</h1>
+     <h1 className={`font-bold text-xl ${homeStyles['page-header']} text-center `}>Your notes</h1>
 
     {NotesArr.length===0?
   
@@ -38,7 +38,9 @@ function Home() {
     <div className={
           !isDark?`flex 
           flex-col 
-          shadow-lg border-collapse border-1 border-slate-400  
+          shadow-lg 
+          border-collapse border-1 
+          border-slate-400  
           rounded-sm  
           items-center 
           justify-center  
@@ -61,19 +63,36 @@ function Home() {
             <span className=' cursor-pointer font-semibold text-lg'>create a new note</span>
         </Link>
         </div>: 
-        <div>
+        <div
+        className={
+          `flex 
+          flex-col 
+          shadow-lg border-collapse border-1 
+          border-slate-300  
+          bg-slate-100 
+          rounded-sm  
+          items-center 
+          justify-start  
+          text-center
+          ${homeStyles['Items-Window']}
+          
+          `}
+>
         {
           NotesArr.map(item=>{
-            return(<div key={item.id}>
-              <span><strong>Subject:</strong>{item.subject}</span>
+            return(
+            
+            
+            <div className={`${homeStyles['note']} bg-slate-300 border-none  rounded-md w-[100%] text-center`}  key={item.id}>
+              <span>Subject: <strong> {item.subject}</strong></span>
               <br/>
 
-              <div className='inline-flex'>
+              <div className='inline-flex items-center justify-center  ' >
                 <Link to={`/notes/${item.id} `}>
-                  <button className='h-8 w-20 text-slate-100 bg-blue-500 rounded-sm'>view more</button>
+                  <button className={`${homeStyles['noteBtn']} h-8 w-20 text-slate-100 bg-blue-500 rounded-sm`}>view more</button>
                 </Link>
 
-                <button className='h-8 w-20 text-slate-100 bg-red-500 rounded-sm'onClick={()=>deleteNote(item.id)}>
+                <button className={` ${homeStyles['noteBtn']} h-8 w-20 text-slate-100 bg-red-500 rounded-sm`}onClick={()=>deleteNote(item.id)}>
                   delete
                 </button>
               </div>

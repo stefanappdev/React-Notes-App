@@ -28,29 +28,25 @@ function Home() {
   
   const {isDark}=UseTheme();
 
-   return <div className='maincontent'>
-     
+   return <div className={`maincontent`}>
+     <div className={`${homeStyles['homePageStyle']}`}>
+
      <h1 className={`font-bold text-xl ${homeStyles['page-header']} text-center `}>Your notes</h1>
 
     {NotesArr.length===0?
   
    
     <div className={
-          !isDark?`flex 
-          flex-col 
+          !isDark?`
           shadow-lg 
           border-collapse border-1 
           border-slate-400  
-          rounded-sm  
-          items-center 
-          justify-center  
+          rounded-sm    
           ${homeStyles['noItems-Window']}`:
-          `flex 
-          flex-col 
+          `
           shadow-lg border-collapse border-1 border-slate-400  
           rounded-sm  
-          items-center 
-          justify-center  text-slate-50 bg-slate-950
+          text-slate-50 bg-slate-950
           ${homeStyles['noItems-Window']}`
           
           }>
@@ -65,15 +61,11 @@ function Home() {
         </div>: 
         <div
         className={
-          `flex 
-          flex-col 
+          `
           shadow-lg border-collapse border-1 
           border-slate-300  
           bg-slate-100 
           rounded-sm  
-          items-center 
-          justify-start  
-          text-center
           ${homeStyles['Items-Window']}
           
           `}
@@ -103,6 +95,7 @@ function Home() {
       </div>}
 
     </div>
+</div>
 }
   
 

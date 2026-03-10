@@ -47,7 +47,7 @@ function Note() {
   }
 
   return (
-    <>
+    <div className={`${EditPageStyles['EditFormPage']}`}>
       {!shouldEdit?
       
       <div className={ `
@@ -56,9 +56,6 @@ function Note() {
         border-1 border-slate-400  
         bg-slate-100 
         text-slate-950 
-        flex flex-col
-        items-center justify-center
-        text-center
         rounded-sm  
          ${EditPageStyles['EditForm']} 
          ` }>
@@ -167,7 +164,7 @@ function Note() {
         </form>
       </>
             }
-    </>
+    </div>
   )
 }
 
